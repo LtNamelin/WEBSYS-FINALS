@@ -1,0 +1,1 @@
+<a href="<?= esc($link ?? '#') ?>" class="mt-2 underline text-blue-600"> <?= esc($linkName ?? 'Read more') ?></a>
