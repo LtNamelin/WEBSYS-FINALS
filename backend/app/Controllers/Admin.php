@@ -35,14 +35,14 @@ class Admin extends BaseController
         if (!$session->has('user') || $session->get('user')['type'] !== 'admin') {
             return redirect()->to('/');
         }
+        
+        $data = [
+            'products'      => $productsModel->findAll(),
+            'errors'        => $session->getFlashdata('errors') ?? [],
+            'old'           => $session->getFlashdata('old') ?? [],
+        ];
 
-        $errors = $session->getFlashdata('errors') ?? [];
-        $old = $session->getFlashdata('old') ?? [];
-
-        $data['products'] = $productsModel->findAll();
         return view('admin/menuPage', $data);
-
-        return view('admin/menuPage', ['errors' => $errors, 'old' => $old]);
     }
 
     public function menuPage()
@@ -52,15 +52,39 @@ class Admin extends BaseController
         $validation = \Config\Services::validation();
         $request = service('request');
         $post = $request->getPost();
+        $update = $request->getPost('update');
+        $delete = $request->getPost('delete'); 
         
-        if($request->getMethod() === 'post' && !$request->getPost('delete'))
+        // Delete Product
+        if($delete)
+        {
+            $product = $productsModel->find($delete);
+
+            if($product && $product->product_image)
+            {
+                $oldPath = FCPATH . '/assets/uploads/images/products/' . $product->product_image;
+
+                if(is_file($oldPath))
+                {
+                    unlink($oldPath);
+                }
+            }
+
+            $productsModel->delete($delete);
+            $session->setFlashdata('success', 'product deleted successfully');
+
+            return redirect()->to('/admin/menuPage');
+        }
+
+        //Add or Update product
+        if($request->getMethod() === 'post')
         {
             $rules = [
                 'product_name'          => 'required|min_length[2]|max_length[100]',
                 'product_description'   => 'required|min_length[2]|max_length[255]',
                 'price'                 => 'required|decimal|greater_than_equal_to[0]',
                 'type'                  => 'required|min_length[2]|max_length[50]',
-                'product_image'         => 'uploaded[product_image]|is_image[product_image]|max_size[product_image,4096]'
+                'product_image'         => $update ? 'permit_empty|is_image[product_image]|max_size[product_image,4096]' : 'uploaded[product_image]|is_image[product_image]|max_size[product_image,4096]'
             ];
 
             $validation->setRules($rules);
@@ -73,43 +97,55 @@ class Admin extends BaseController
                 return redirect()->back()->withInput();
             }
 
-            $image = $request->getFile('product_image');
-            $imageName = $image->getRandomName();
-            $image->move(FCPATH . '/assets/uploads/images/products', $imageName);
-                
+            $imageFile = $request->getFile('product_image');
+            $imageName = null;
+
+            if ($imageFile && $imageFile->isValid()) 
+            {
+                $imageName = $imageFile->getRandomName();
+                $imageFile->move(FCPATH . '/assets/uploads/images/products', $imageName);
+            }
+
             $productData = [
                 'product_name'          => $request->getPost('product_name'),
                 'product_description'   => $request->getPost('product_description'),
                 'price'                 => $request->getPost('price'),
                 'type'                  => $request->getPost('type'),
-                'product_image'         => $imageName,
             ];
-                
-            $productsModel->insert($productData);
-            $session->setFlashdata('success', 'product added successfully');
-
-            return redirect()->to('/admin/menuPage');
-        }
-
-        if($request->getPost('delete'))
-        {
-            $id = $request->getPost('delete');
-            $product = $productsModel->find($id);
-
-            if($product)
+            
+            if ($imageName) 
             {
-                $path = FCPATH . "/assets/uploads/images/products/" . $product->product_image;
+                $productData['product_image'] = $imageName;
 
-                if(is_file($path))
+                if ($update) 
                 {
-                    unlink($path);
-                }
+                    $oldProduct = $productsModel->find($update);
 
-                $productsModel->delete($id);
-                $session->setFlashdata('success', 'product deleted successfully');
+                    if ($oldProduct && $oldProduct->product_image) {
+                        $oldPath = FCPATH . '/assets/uploads/images/products/' . $oldProduct->product_image;
+                        if (is_file($oldPath)) 
+                        {
+                            unlink($oldPath);
+                        }
+                    }
+
+                }
+            }
+
+            if ($update) 
+            {
+                $productsModel->update($update, $productData);
+                $session->setFlashdata('success', 'Product updated successfully');
+            } 
+            else 
+            {
+                $productsModel->insert($productData);
+                $session->setFlashdata('success', 'Product added successfully');
             }
 
             return redirect()->to('/admin/menuPage');
         }
+
+        
     }
 }
