@@ -1,7 +1,6 @@
     <?php
-        $title = $title ?? 'My Coffee';
+        $title = $title ?? 'Café de Lumière';
     ?>
-    
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,21 +8,23 @@
         <title><?= esc($title)?></title>
 
         <style>
+            @import url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap');
             :root
             {
                 --dark-espresso: #4E342E;
-                --espresso: #6F5853;
+                --espresso: #ffd25fff;
                 --light-espresso: #917F7B;
 
-                --dark-cappuccino: #A67B5B;
-                --cappuccino: #B8947B;
+                --dark-cappuccino: #303030ff;
+                --cappuccino: #b8967bff;
                 --light-cappuccino: #CAAE9B;
 
                 --dark-latte: #DCC9BB;
                 --latte: #E5D6CC;
                 --light-latte: #EDE4DD;
             }
-            
+
             /*espresso color */
             .color-dark-espresso
             {
@@ -39,7 +40,7 @@
             {
                 background-color: var(--light-espresso);
             }
-            
+
             /*espresso color text */
              .text-color-dark-espresso
             {
@@ -157,6 +158,36 @@
              .text-color-light-latte
             {
                 color: var(--light-latte);
+                            }
+            .container{
+                margin: 0 120px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
-        </style>
+
+            .colorblock{
+                height: 10px;
+                background-color: #ffd25fff;
+            }
+
+            .title {
+                font-family: "Fleur De Leah", cursive;
+                font-size: 5rem;
+                color: #22223b;
+
+            }
+            .btn {
+                font-family: "Funnel Display", sans-serif;
+                font-size: 30px;
+                font-weight: 200;
+                color: #22223b;
+                margin-top: 30px;
+                margin-right: 50px;
+                padding: 5px 20px;
+                margin-left: 25px;
+                display: block;
+                text-align: center;
+            }
+            </style>
     </head>

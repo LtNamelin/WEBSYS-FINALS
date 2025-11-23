@@ -39,7 +39,7 @@
                         'color' => 'color-espresso',
                         'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Cappuccino_in_original.jpg/1200px-Cappuccino_in_original.jpg'
                     ])?>
-                    
+
                     <?= view('components/cards/highlight_Card', [
                         'title' => 'Latte',
                         'description' => 'Smooth espresso blended with creamy milk',
