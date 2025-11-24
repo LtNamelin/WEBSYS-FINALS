@@ -1,5 +1,5 @@
-<section class="mx-8 my-8 color-dark-cappuccino rounded-xl shadow">
-    <div class="py-10 text-center">
+<section class="mx-8 my-14 color-dark-cappuccino rounded-xl shadow">
+    <div class="py-50 text-center">
         <?php if (!empty($heading)): ?>
             <h1 class="text-9xl font-bold text-white text-center"> <?= esc($heading) ?></h1>
         <?php endif; ?>
