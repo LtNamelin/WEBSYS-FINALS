@@ -25,3 +25,4 @@ $routes->post('/signupPage', 'Auth::signupPage');
 
 
 $routes->get('/menuPage', 'MenuController::index');
+$routes->get('/order', 'MenuController::order');

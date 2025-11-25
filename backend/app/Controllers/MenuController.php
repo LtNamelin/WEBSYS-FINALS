@@ -10,4 +10,9 @@ class MenuController extends Controller
     {
         return view('user/menuPage');
     }
+
+    public function order()
+    {
+        return view('user/orderPage');
+    }
 }
