@@ -22,3 +22,6 @@ $routes->get('/logout', 'Auth::logout');
 $routes->get('/signupPage', 'Auth::showSignupPage');
 $routes->post('/signupPage', 'Auth::signupPage');
 
+
+
+$routes->get('/menuPage', 'MenuController::index');
