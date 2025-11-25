@@ -10,10 +10,11 @@
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&display=swap');
             @import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
             :root
             {
                 --dark-espresso: #4E342E;
-                --espresso: #ffd25fff;
+                --espresso: #ffffffff;
                 --light-espresso: #917F7B;
 
                 --dark-cappuccino: #303030ff;
@@ -175,12 +176,12 @@
                 font-family: "Fleur De Leah", cursive;
                 font-size: 5rem;
                 color: #22223b;
+                margin-top: 10px;
 
             }
             .btn {
-                font-family: "Funnel Display", sans-serif;
-                font-size: 30px;
-                font-weight: 200;
+                font-family: "DM Serif Text", serif;
+                font-size: 40px;
                 color: #22223b;
                 margin-top: 30px;
                 margin-right: 50px;
@@ -188,6 +189,11 @@
                 margin-left: 25px;
                 display: block;
                 text-align: center;
+                transition: all 0.3s ease;
             }
+            .btn:hover {
+                transform: scale(1.1);
+                color: #ffdd00ff;
+}
             </style>
     </head>

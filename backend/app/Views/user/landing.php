@@ -11,8 +11,10 @@
 
         <!-- Hero -->
         <?= view('components/hero',[
-            'heading' => 'October Special',
-            'subHeading' => '15% Off for new users & 10% Off for old users',
+            'line' => 'null',
+            'heading' => 'ᴛʜᴇ ᴄᴀꜰᴇ ᴛʜᴀᴛ ᴍᴀᴋᴇꜱ ʏᴏᴜ ꜰᴇᴇʟ ᴄʟᴏꜱᴇʀ ᴛᴏ ʜᴇᴀᴠᴇɴ',
+            'subHeading' => 'blah blah blah',
+            'button' => 'null',
         ])?>
 
         <main class="space-y-12 py-10">
@@ -59,7 +61,7 @@
                     ])?>
                 </div>
             </section>
-            
+
             <!-- Services Section -->
             <section class="max-w-7xl mx-auto color-light-latte text-black rounded-xl shadow p-10">
                 <h2 class="text-4xl text-color-dark-espresso font-bold mb-8 text-center"> Services </h2>

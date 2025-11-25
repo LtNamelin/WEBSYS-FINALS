@@ -7,7 +7,7 @@
             <nav>
                 <div class="container mx-20px px-4 flex items-center justify-center h-35">
                     <div class="hidden md:flex space-x-6 font-bold">
-                        <a href="#" class="btn">Home</a>
+                        <a href="/" class="btn">Home</a>
                         <a href="/menuPage" class="btn">Menu</a>
                         <a href="/" class="title">Café</a>
                         <a href="/" class="title">de</a>
