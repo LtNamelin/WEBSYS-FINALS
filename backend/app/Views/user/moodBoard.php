@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
     <?= view('components/head', [
         'title' => 'My Coffee | Mood Board'
     ])?>
@@ -29,7 +29,7 @@
                 <div class="h-24 rounded-lg color-cappuccino flex items-center justify-center text-black">#B8947B</div>
                 <div class="h-24 rounded-lg color-light-cappuccino flex items-center justify-center text-black">#CAAE9B</div>
             </div>
-            
+
             <div class="flex flex-col gap-4">
                 <div class="h-24 rounded-lg color-dark-latte flex items-center justify-center text-black">#DCC9BB</div>
                 <div class="h-24 rounded-lg color-latte flex items-center justify-center text-black">#E5D6CC</div>
