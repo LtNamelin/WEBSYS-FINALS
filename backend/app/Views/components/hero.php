@@ -6,7 +6,7 @@
     <?php if (!empty($subHeading)): ?>
         <div class="flex-1 text-center">
             <h2 class="h2"><?= esc($subHeading) ?></h2>
-            <a href="#" class="button">Order Now</a>
+            <a href="/order" class="button">Order Now</a>
         </div>
         <div class="h2-line"></div>
     <?php endif; ?>

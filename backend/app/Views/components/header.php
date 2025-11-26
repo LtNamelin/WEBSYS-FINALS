@@ -10,16 +10,10 @@
                     <div class="hidden md:flex space-x-6 font-bold">
                         <a href="/" class="btn">Home</a>
                         <a href="/menuPage" class="btn">Menu</a>
-
-                        <!-- Your Café Title -->
                         <a href="/" class="title">Café</a>
                         <a href="/" class="title">de</a>
                         <a href="/" class="title">Lumière</a>
-
-                        <a href="#" class="btn">Reserve</a>
-
                         <a href="/order" class="btn">Order</a>
-
                         <?php if (session()->has('user')): ?>
                             <a href="/logout" class="btn">Logout</a>
                         <?php else: ?>

@@ -14,7 +14,7 @@
             @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
 
             :root {
-                --dark-espresso: #4E342E;
+                --dark-espresso: #000000ff;
                 --espresso: #ffffffff;
                 --light-espresso: #917F7B;
 
@@ -22,7 +22,7 @@
                 --cappuccino: #b8967bff;
                 --light-cappuccino: #CAAE9B;
 
-                --dark-latte: #DCC9BB;
+                --dark-latte: #ffe195ff;
                 --latte: #E5D6CC;
                 --light-latte: #EDE4DD;
             }
