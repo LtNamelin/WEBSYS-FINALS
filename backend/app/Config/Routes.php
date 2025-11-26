@@ -15,7 +15,7 @@ $routes->get('/admin/orderPage', 'Admin::orderPage');
 
 $routes->get('/admin/menuPage', 'Admin::showMenuPage');
 $routes->post('/admin/menuPage', 'Admin::menuPage');
-
+$routes->get('/menuPage', 'MenuController::index');
 $routes->get('/loginPage', 'Auth::showLoginPage');
 $routes->post('/loginPage', 'Auth::loginPage');
 
@@ -24,7 +24,5 @@ $routes->get('/logout', 'Auth::logout');
 $routes->get('/signupPage', 'Auth::showSignupPage');
 $routes->post('/signupPage', 'Auth::signupPage');
 
-
-
-$routes->get('/menuPage', 'MenuController::index');
 $routes->get('/order', 'MenuController::order');
+$routes->get('/products', 'Products::index');
