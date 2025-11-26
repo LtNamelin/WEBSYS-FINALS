@@ -2,7 +2,6 @@
     <?php if(!empty($image)) : ?>
         <img src="<?= esc($image) ?>" alt="<?= esc($title ?? '') ?>" class="w-full rounded-xl h-50 object-cover">
     <?php endif; ?>
-    
     <div class="p-5 flex flex-col justify-between flex-1">
         <div>
             <?php if(!empty($title)) : ?>
@@ -29,10 +28,8 @@
                         'version' => $secondary_button['version']
                     ])?>
                 </div>
-               
             <?php endif; ?>
         </div>
-        
         <?php if(!empty($status)) : ?>
             <div class="mt-4 px-4 py-1 rounded-full <?= esc($color) ?>">
                 <p class="text-base text-gray-100 text-center font-bold"><?= esc($status) ?></p>
