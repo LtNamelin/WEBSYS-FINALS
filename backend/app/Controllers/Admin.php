@@ -18,7 +18,7 @@ class Admin extends BaseController
         $usersModel = new UsersModel();
 
         $data['users'] = $usersModel->findAll();
-        
+
         return view('admin/accountsPage', $data);
     }
 
@@ -35,7 +35,7 @@ class Admin extends BaseController
         if (!$session->has('user') || $session->get('user')['type'] !== 'admin') {
             return redirect()->to('/');
         }
-        
+
         $data = [
             'products'      => $productsModel->findAll(),
             'errors'        => $session->getFlashdata('errors') ?? [],
@@ -53,19 +53,16 @@ class Admin extends BaseController
         $request = service('request');
         $post = $request->getPost();
         $update = $request->getPost('update');
-        $delete = $request->getPost('delete'); 
-        
+        $delete = $request->getPost('delete');
+
         // Delete Product
-        if($delete)
-        {
+        if ($delete) {
             $product = $productsModel->find($delete);
 
-            if($product && $product->product_image)
-            {
+            if ($product && $product->product_image) {
                 $oldPath = FCPATH . '/assets/uploads/images/products/' . $product->product_image;
 
-                if(is_file($oldPath))
-                {
+                if (is_file($oldPath)) {
                     unlink($oldPath);
                 }
             }
@@ -87,9 +84,8 @@ class Admin extends BaseController
             ];
 
             $validation->setRules($rules);
-            
-            if(!$validation->run($post))
-            {
+
+            if (!$validation->run($post)) {
                 $session->setFlashdata('errors', $validation->getErrors());
                 $session->setFlashdata('old', $post);
 
@@ -99,8 +95,7 @@ class Admin extends BaseController
             $imageFile = $request->getFile('product_image');
             $imageName = null;
 
-            if ($imageFile && $imageFile->isValid()) 
-            {
+            if ($imageFile && $imageFile->isValid()) {
                 $imageName = $imageFile->getRandomName();
                 $imageFile->move(FCPATH . '/assets/uploads/images/products', $imageName);
             }
@@ -111,33 +106,26 @@ class Admin extends BaseController
                 'price'                 => $request->getPost('price'),
                 'type'                  => $request->getPost('type'),
             ];
-            
-            if ($imageName) 
-            {
+
+            if ($imageName) {
                 $productData['product_image'] = $imageName;
 
-                if ($update) 
-                {
+                if ($update) {
                     $oldProduct = $productsModel->find($update);
 
                     if ($oldProduct && $oldProduct->product_image) {
                         $oldPath = FCPATH . '/assets/uploads/images/products/' . $oldProduct->product_image;
-                        if (is_file($oldPath)) 
-                        {
+                        if (is_file($oldPath)) {
                             unlink($oldPath);
                         }
                     }
-
                 }
             }
 
-            if ($update) 
-            {
+            if ($update) {
                 $productsModel->update($update, $productData);
                 $session->setFlashdata('success', 'Product updated successfully');
-            } 
-            else 
-            {
+            } else {
                 $productsModel->insert($productData);
                 $session->setFlashdata('success', 'Product added successfully');
             }
