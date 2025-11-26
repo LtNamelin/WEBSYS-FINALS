@@ -63,7 +63,7 @@
         </section>
 
         <!-- Services Section -->
-        <section class="shadow mx-auto p-10 rounded-xl max-w-7xl text-black color-light-latte">
+        <section class="shadow mx-auto p-10 rounded-xl max-w-7xl text-black color-dark-latte">
             <h2 class="mb-8 font-bold text-color-dark-espresso text-4xl text-center"> Services </h2>
 
             <div class="gap-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
@@ -102,7 +102,7 @@
         <!-- CTA -->
         <?= view('components/cta', [
             'heading' => 'Fresh Coffee Every Day With My Coffee',
-            'subHeading' => 'Start your morning right with a cup brewed just for you',
+            'subhead' => 'Start your morning right with a cup brewed just for you',
             'primary_button' => null,
             'secondary_button' => ['btnName' => 'Order Now', 'version' => true, 'link' => '#']
         ]) ?>
