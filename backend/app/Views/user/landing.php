@@ -13,7 +13,7 @@
     <?= view('components/hero', [
         'line' => 'null',
         'heading' => 'ᴛʜᴇ ᴄᴀꜰᴇ ᴛʜᴀᴛ ᴍᴀᴋᴇꜱ ʏᴏᴜ ꜰᴇᴇʟ ᴄʟᴏꜱᴇʀ ᴛᴏ ʜᴇᴀᴠᴇɴ',
-        'subHeading' => 'blah blah blah',
+        'subHeading' => 'A taste crafted for the gods.',
         'button' => 'null',
     ]) ?>
 
