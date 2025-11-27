@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <?= view('components/head', [
-    'title' => 'Cafe de Lumiere | Profile'
+    'title' => 'Café de Lumière | Profile'
 ]) ?>
 
 <body class="bg-gray-50 text-gray-900">

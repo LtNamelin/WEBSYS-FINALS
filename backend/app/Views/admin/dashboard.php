@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <?= view('components/head', [
-    'title' => 'My Coffee | Admin Dashboard'
+    'title' => 'Café de Lumière | Admin Dashboard'
 ]) ?>
 
-<body class="color-dark-latte">
+<body class="text-black color-espresso">
     <!-- NavBar -->
     <?= view('components/header') ?>
 
@@ -16,7 +16,7 @@
             <!-- Main Content -->
             <div class="flex-1 space-y-12 mx-8 my-8">
                 <!-- Admin Dashboard Stats -->
-                <section class="shadow p-6 rounded-xl color-light-cappuccino">
+                <section class="shadow p-6 rounded-xl color-dark-latte">
                     <h2 class="mt-4 mb-8 font-bold text-color-dark-espresso text-2xl text-center">
                         Admin Dashboard
                     </h2>
@@ -24,25 +24,25 @@
                     <div class="gap-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
                         <?= view('components/cards/card_stats', [
                             'title' => 'Total Current Users:',
-                            'value' => 0,
+                            'value' => $totalUsers,
                             'subtitle' => null
                         ]) ?>
 
                         <?= view('components/cards/card_stats', [
                             'title' => 'Total Orders Today:',
-                            'value' => 0,
+                            'value' => $ordersToday,
                             'subtitle' => null
                         ]) ?>
 
                         <?= view('components/cards/card_stats', [
                             'title' => 'Total Orders This Week:',
-                            'value' => 0,
+                            'value' => $ordersThisWeek,
                             'subtitle' => null
                         ]) ?>
 
                         <?= view('components/cards/card_stats', [
                             'title' => 'Total Orders This Month:',
-                            'value' => 0,
+                            'value' => $ordersThisMonth,
                             'subtitle' => null
                         ]) ?>
                     </div>
@@ -52,7 +52,7 @@
                 <section>
                     <div class="gap-8 grid grid-cols-1 md:grid-cols-3">
                         <!-- Today -->
-                        <div class="shadow p-4 rounded-xl color-light-cappuccino">
+                        <div class="shadow p-4 rounded-xl color-light-latte">
                             <h3 class="mb-4 font-semibold text-color-dark-espresso text-xl text-center">
                                 Most Sold Item Today
                             </h3>
@@ -65,7 +65,7 @@
                         </div>
 
                         <!-- This Week -->
-                        <div class="shadow p-4 rounded-xl color-light-cappuccino">
+                        <div class="shadow p-4 rounded-xl color-light-latte">
                             <h3 class="mb-4 font-semibold text-color-dark-espresso text-xl text-center">
                                 Most Sold Item This Week
                             </h3>
@@ -78,7 +78,7 @@
                         </div>
 
                         <!-- This Month -->
-                        <div class="shadow p-4 rounded-xl color-light-cappuccino">
+                        <div class="shadow p-4 rounded-xl color-light-latte">
                             <h3 class="mb-4 font-semibold text-color-dark-espresso text-xl text-center">
                                 Most Sold Item This Month
                             </h3>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<?= view('components/head', ['title' => 'Menu | My Coffee']) ?>
+<?= view('components/head', ['title' => 'Menu | Café de Lumière']) ?>
 
 <body class="text-white color-espresso">
 

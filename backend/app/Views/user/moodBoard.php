@@ -2,7 +2,7 @@
 <html lang="en">
 
 <?= view('components/head', [
-    'title' => 'Divine Europe | Mood Board'
+    'title' => 'Café de Lumière | Mood Board'
 ]) ?>
 
 <body class="bg-[#f5f2ef] text-color-dark-espresso">

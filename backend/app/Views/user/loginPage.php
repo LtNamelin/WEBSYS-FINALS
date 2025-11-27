@@ -7,7 +7,7 @@ $old = $old ?? [];
 <html lang="en">
 
 <?= view('components/head', [
-  'title' => 'My Coffee | Login'
+  'title' => 'Café de Lumière | Login'
 ]) ?>
 
 <body class="flex flex-col items-center bg-[#ffffff] min-h-screen text-[#4E342E]">
