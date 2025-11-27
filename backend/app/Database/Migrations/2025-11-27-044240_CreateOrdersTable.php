@@ -16,39 +16,23 @@ class CreateOrdersTable extends Migration
                 'auto_increment' => true,
             ],
             'user_id' => [
-                'type'           => 'INT',
-                'constraint'     => 11,
-                'unsigned'       => true,
+                'type'       => 'INT',
+                'unsigned'   => true,
             ],
-            'product_id' => [
-                'type'           => 'INT',
-                'constraint'     => 11,
-                'unsigned'       => true,
-            ],
-            'item_name' => [
-                'type'           => 'VARCHAR',
-                'constraint'     => 255,
-                'default'        => 'item',
-            ],
-            'quantity' => [
-                'type'           => 'INT',
-                'constraint'     => 11,
-                'unsigned'       => true,
-            ],
-            'total_price' => [
-                'type' => 'DECIMAL',
+            'total_amount' => [
+                'type'       => 'DECIMAL',
                 'constraint' => '10,2',
-                'null' => true,
+                'default'    => 0.00,
             ],
             'status' => [
-                'type' => 'VARCHAR',
+                'type'       => 'VARCHAR',
                 'constraint' => 50,
-                'default' => 'pending',
+                'default'    => 'Pending',
             ],
             'address' => [
-                'type' => 'VARCHAR',
+                'type'       => 'VARCHAR',
                 'constraint' => 255,
-                'default' => 'address',
+                'null'       => true,
             ],
             'deleted_at' => [
                 'type' => 'DATETIME',
@@ -63,10 +47,9 @@ class CreateOrdersTable extends Migration
                 'null' => true,
             ],
         ]);
-        
+
         $this->forge->addKey('id', true);
         $this->forge->addForeignKey('user_id', 'users', 'id', 'CASCADE', 'CASCADE');
-        $this->forge->addForeignKey('product_id', 'products', 'id', 'CASCADE', 'CASCADE');
         $this->forge->createTable('orders');
     }
 
