@@ -13,19 +13,19 @@ class OrdersSeeder extends Seeder
         $ordersData = [
             [
                 'user_id'    => 1,
-                'status'     => 'pending',
+                'total_amount' => 2 * 75.50,
                 'created_at' => $dateNow,
                 'updated_at' => $dateNow,
             ],
             [
                 'user_id'    => 2,
-                'status'     => 'pending',
+                'total_amount' => 150.21,
                 'created_at' => $dateNow,
                 'updated_at' => $dateNow,
             ],
             [
                 'user_id'    => 3,
-                'status'     => 'pending',
+                'total_amount' => 3 * 100.50,
                 'created_at' => $dateNow,
                 'updated_at' => $dateNow,
             ],

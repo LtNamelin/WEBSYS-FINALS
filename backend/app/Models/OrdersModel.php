@@ -15,7 +15,6 @@ class OrdersModel extends Model
     protected $allowedFields    = [
         'user_id',
         'total_amount',
-        'status',
         'created_at',
         'updated_at',
         'deleted_at',
