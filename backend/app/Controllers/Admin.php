@@ -5,12 +5,27 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\UsersModel;
 use App\Models\ProductsModel;
+use App\Models\OrdersModel;
 
 class Admin extends BaseController
 {
     public function dashboard()
     {
-        return view('admin/dashboard');
+        $usersModel = new UsersModel();
+        $ordersModel = new OrdersModel();
+        
+        $now = date('Y-m-d');
+        $weekStart = date('Y-m-d', strtotime('monday this week'));
+        $monthStart = date('Y-m-01');
+
+        $data = [
+            'totalUsers' => $usersModel->countAllResults(),
+            'ordersToday' => $ordersModel->where('DATE(created_at)', $now)->countAllResults(),
+            'ordersThisWeek' => $ordersModel->where('DATE(created_at) >=', $weekStart)->countAllResults(),
+            'ordersThisMonth' => $ordersModel->where('DATE(created_at) >=', $monthStart)->countAllResults()
+        ];
+
+        return view('admin/dashboard', $data);
     }
 
     public function accountsPage()
@@ -22,9 +37,25 @@ class Admin extends BaseController
         return view('admin/accountsPage', $data);
     }
 
-    public function orderPage(): string
+    public function orderPage()
     {
-        return view('admin/orderPage');
+        $session = session();
+        $ordersModel = new OrdersModel();
+        $request = service('request');
+        $delete = $request->getPost('delete');
+
+        if ($delete) {
+            $order = $ordersModel->find($delete);
+
+            if($order)
+            {
+                $ordersModel->delete($delete);
+                $session->setFlashdata('success', 'order deleted successfully');
+            }
+            return redirect()->to('/admin/orderPage');
+        }
+        $data['orders'] = $ordersModel->findAll();
+        return view('admin/orderPage',  $data);
     }
 
     public function showMenuPage()

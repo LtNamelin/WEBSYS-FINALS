@@ -24,16 +24,6 @@ class CreateOrdersTable extends Migration
                 'constraint' => '10,2',
                 'default'    => 0.00,
             ],
-            'status' => [
-                'type'       => 'VARCHAR',
-                'constraint' => 50,
-                'default'    => 'Pending',
-            ],
-            'address' => [
-                'type'       => 'VARCHAR',
-                'constraint' => 255,
-                'null'       => true,
-            ],
             'deleted_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
