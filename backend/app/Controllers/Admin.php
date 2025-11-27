@@ -74,7 +74,7 @@ class Admin extends BaseController
         }
 
         //Add or Update product
-        if ($request->getMethod() === 'post') {
+
             $rules = [
                 'product_name'          => 'required|min_length[2]|max_length[100]',
                 'product_description'   => 'required|min_length[2]|max_length[255]',
@@ -131,6 +131,5 @@ class Admin extends BaseController
             }
 
             return redirect()->to('/admin/menuPage');
-        }
     }
 }
