@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <?= view('components/head', [
-    'title' => 'My Coffee | Profile'
+    'title' => 'Café de Lumière | Profile'
 ]) ?>
 
 <body class="bg-[#EDE4DD] min-h-screen text-[#4E342E]">

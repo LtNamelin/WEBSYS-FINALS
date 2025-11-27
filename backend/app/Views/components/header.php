@@ -1,3 +1,4 @@
+<?php $session = session(); ?>
 <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
 <link rel="stylesheet" href="<?= base_url('assets/css/header.css') ?>">
 
@@ -14,7 +15,18 @@
                         <a href="/" class="title">de</a>
                         <a href="/" class="title">Lumière</a>
                         <a href="/cart" class="btn">Order</a>
-                        <?php if (session()->has('user')): ?>
+
+                        <?php if ($session->has('user')): ?>
+                            <?php $type = $session->get('user')['type'] ?? ''; ?>
+
+                            <?php if ($type === 'admin' || $type === 'manager'): ?>
+                                <a href="/admin/dashboard" class="btn">Dashboard</a>
+                            <?php elseif ($type === 'regular_client'): ?>
+                                <a href="/order" class="btn">Your Orders</a>
+                            <?php endif; ?>
+
+                            <!-- Profile link visible for all logged-in users -->
+                            <a href="/userProfile" class="btn">Profile</a>
                             <a href="/logout" class="btn">Logout</a>
                         <?php else: ?>
                             <a href="/loginPage" class="btn">Login</a>
@@ -24,3 +36,4 @@
             </nav>
         </div>
     </header>
+</body>

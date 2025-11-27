@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <?= view('components/head', [
-        'title' => 'My Coffee | Road Map'
-    ])?>
+<?= view('components/head', [
+    'title' => 'Café de Lumière | Road Map'
+]) ?>
 
-    <body class="bg-[#f5f2ef] text-color-dark-espresso">
+<body class="bg-[#f5f2ef] text-color-dark-espresso">
 
-        <!-- NavBar -->
-        <?= view('components/header') ?>
+    <!-- NavBar -->
+    <?= view('components/header') ?>
 
-    <div class="max-w-6xl mx-auto py-12 px-6 space-y-12">
+    <div class="space-y-12 mx-auto px-6 py-12 max-w-6xl">
         <!-- Title -->
-        <h1 class="text-5xl font-bold text-center mb-8">My Coffee Road Map</h1>
+        <h1 class="mb-8 font-bold text-5xl text-center">My Coffee Road Map</h1>
         <!-- Road Map -->
         <section>
-            <h2 class="text-3xl font-bold mb-4">Road Map</h2>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <h2 class="mb-4 font-bold text-3xl">Road Map</h2>
+
+            <div class="gap-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
                 <?= view('components/cards/card', [
                     'title' => 'Product Module',
                     'description' => 'Add, view, edit, delete products',
@@ -26,7 +26,7 @@
                     'status' => 'Backlog',
                     'color' => 'bg-gray-700',
                     'image' => '/assets/image/Backlog.svg'
-                ])?>
+                ]) ?>
 
                 <?= view('components/cards/card', [
                     'title' => 'Cart Module',
@@ -36,7 +36,7 @@
                     'status' => 'Backlog',
                     'color' => 'bg-gray-700',
                     'image' => '/assets/image/Backlog.svg'
-                ])?>
+                ]) ?>
 
                 <?= view('components/cards/card', [
                     'title' => 'Order Module',
@@ -46,7 +46,7 @@
                     'status' => 'Backlog',
                     'color' => 'bg-gray-700',
                     'image' => '/assets/image/Backlog.svg'
-                ])?>
+                ]) ?>
 
                 <?= view('components/cards/card', [
                     'title' => 'Admin Dashboard',
@@ -56,7 +56,7 @@
                     'status' => 'Backlog',
                     'color' => 'bg-gray-700',
                     'image' => '/assets/image/Backlog.svg'
-                ])?>
+                ]) ?>
 
                 <?= view('components/cards/card', [
                     'title' => 'Auth System',
@@ -66,13 +66,14 @@
                     'status' => 'Backlog',
                     'color' => 'bg-gray-700',
                     'image' => '/assets/image/Backlog.svg'
-                ])?>
+                ]) ?>
             </div>
         </section>
 
     </div>
 
-        <!-- Footer -->
-        <?= view('components/footer') ?>
-    </body>
+    <!-- Footer -->
+    <?= view('components/footer') ?>
+</body>
+
 </html>

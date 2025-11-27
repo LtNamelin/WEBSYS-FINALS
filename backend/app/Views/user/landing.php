@@ -2,7 +2,7 @@
 <html>
 
 <?= view('components/head', [
-    'title' => 'My Coffee'
+    'title' => 'Café de Lumière'
 ]) ?>
 
 <body class="text-white color-espresso">
