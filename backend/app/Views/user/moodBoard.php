@@ -2,7 +2,7 @@
 <html lang="en">
 
 <?= view('components/head', [
-    'title' => 'My Coffee | Mood Board'
+    'title' => 'Divine Europe | Mood Board'
 ]) ?>
 
 <body class="bg-[#f5f2ef] text-color-dark-espresso">
@@ -12,31 +12,44 @@
 
     <div class="space-y-12 mx-auto px-6 py-12 max-w-6xl">
         <!-- Title -->
-        <h1 class="mb-8 font-bold text-5xl text-center">My Coffee Mood Board</h1>
+        <h1 class="mb-8 font-bold text-5xl text-center">Divine Europe Mood Board</h1>
 
         <!-- Color Palette -->
         <section>
             <h2 class="mb-4 font-bold text-3xl">Color Palette</h2>
+
             <div class="gap-4 grid grid-cols-3">
+
+                <!-- Column 1 -->
                 <div class="flex flex-col gap-4">
-                    <div class="flex justify-center items-center rounded-lg h-24 text-white color-dark-espresso">#4E342E</div>
-                    <div class="flex justify-center items-center rounded-lg h-24 text-white color-espresso">#6F5853</div>
-                    <div class="flex justify-center items-center rounded-lg h-24 text-black color-light-espresso">#917F7B</div>
+                    <div class="flex justify-center items-center rounded-lg h-24 text-black" style="background:#FFD700">
+                        #FFD700
+                    </div>
+                    <div class="flex justify-center items-center border rounded-lg h-24 text-black" style="background:#FFFFFF">
+                        #FFFFFF
+                    </div>
                 </div>
 
+                <!-- Column 2 -->
                 <div class="flex flex-col gap-4">
-                    <div class="flex justify-center items-center rounded-lg h-24 text-white color-dark-cappuccino">#A67B5B</div>
-                    <div class="flex justify-center items-center rounded-lg h-24 text-black color-cappuccino">#B8947B</div>
-                    <div class="flex justify-center items-center rounded-lg h-24 text-black color-light-cappuccino">#CAAE9B</div>
+                    <div class="flex justify-center items-center rounded-lg h-24 text-white" style="background:#55595E">
+                        #55595E
+                    </div>
+                    <div class="flex justify-center items-center rounded-lg h-24 text-white" style="background:#00C34B">
+                        #00C34B
+                    </div>
                 </div>
 
+                <!-- Column 3 -->
                 <div class="flex flex-col gap-4">
-                    <div class="flex justify-center items-center rounded-lg h-24 text-black color-dark-latte">#DCC9BB</div>
-                    <div class="flex justify-center items-center rounded-lg h-24 text-black color-latte">#E5D6CC</div>
-                    <div class="flex justify-center items-center rounded-lg h-24 text-black color-light-latte">#EDE4DD</div>
+                    <div class="flex justify-center items-center rounded-lg h-24 text-white" style="background:#B81507">
+                        #B81507
+                    </div>
                 </div>
+
             </div>
         </section>
+
 
         <!-- Typography -->
         <section>

@@ -1,56 +1,58 @@
 <!DOCTYPE html>
 <html>
 <?= view('components/head', [
-    'title' => 'Cafe de Lumiere | Profile'
+    'title' => 'My Coffee | Profile'
 ]) ?>
 
-<body class="color-dark-latte">
+<body class="bg-[#EDE4DD] min-h-screen text-[#4E342E]">
 
+    <!-- Header -->
     <?= view('components/header') ?>
 
-    <main class="mx-8 py-10">
-        <section class="shadow mx-auto p-6 rounded-xl max-w-2xl color-light-cappuccino">
-            <h2 class="mb-6 font-bold text-color-dark-espresso text-3xl text-center">My Profile</h2>
+    <main class="px-4 py-10">
+        <section class="bg-[#E5D6CC] shadow mx-auto p-8 border border-[#DCC9BB] rounded-xl max-w-2xl">
 
-            <!-- Update Profile Form -->
-            <form action="<?= site_url('user/update') ?>" method="post" class="flex flex-col items-center space-y-6">
+            <!-- Title -->
+            <h2 class="mb-6 font-bold text-3xl text-center">My Profile</h2>
+
+            <div class="flex flex-col items-center space-y-6">
 
                 <!-- Profile Image -->
-                <img src="<?= esc($user->profile_image ?? 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png') ?>"
+                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
                     alt="Profile Image"
                     class="shadow rounded-full w-32 h-32">
 
                 <!-- User Info -->
-                <h3 class="font-semibold text-color-dark-espresso text-xl">
-                    <?= esc($user->first_name) ?> <?= esc($user->last_name) ?>
-                </h3>
-                <p class="text-color-espresso-light"><?= esc($user->email) ?></p>
+                <div class="text-center">
+                    <h3 class="font-semibold text-xl">Juan Dela Cruz</h3>
+                    <p class="text-[#6B4F3A]">juan.delacruz@example.com</p>
+                </div>
 
-                <!-- Info Fields -->
+                <!-- Editable Fields -->
                 <div class="space-y-4 w-full">
-
                     <div>
-                        <label class="block mb-1 font-medium text-color-dark-espresso text-sm">First Name</label>
+                        <label class="block mb-1 font-semibold text-sm">First Name</label>
                         <input type="text"
-                            name="first_name"
-                            value="<?= esc($user->first_name) ?>"
-                            class="p-2 border border-gray-300 rounded-lg w-full">
+                            value="Juan"
+                            class="bg-[#F3E9E2] p-2 border border-[#DCC9BB] rounded-lg outline-none focus:ring-[#FFD25F] focus:ring-2 w-full text-black">
                     </div>
-
                     <div>
-                        <label class="block mb-1 font-medium text-color-dark-espresso text-sm">Middle Name</label>
+                        <label class="block mb-1 font-semibold text-sm">Middle Name</label>
                         <input type="text"
-                            name="middle_name"
-                            value="<?= esc($user->middle_name) ?>"
-                            class="p-2 border border-gray-300 rounded-lg w-full">
+                            value="Dela"
+                            class="bg-[#F3E9E2] p-2 border border-[#DCC9BB] rounded-lg outline-none focus:ring-[#FFD25F] focus:ring-2 w-full text-black">
                     </div>
-
                     <div>
-                        <label class="block mb-1 font-medium text-color-dark-espresso text-sm">Last Name</label>
+                        <label class="block mb-1 font-semibold text-sm">Last Name</label>
                         <input type="text"
-                            name="last_name"
-                            value="<?= esc($user->last_name) ?>"
-                            class="p-2 border border-gray-300 rounded-lg w-full">
+                            value="Cruz"
+                            class="bg-[#F3E9E2] p-2 border border-[#DCC9BB] rounded-lg outline-none focus:ring-[#FFD25F] focus:ring-2 w-full text-black">
+                    </div>
+                    <div>
+                        <label class="block mb-1 font-semibold text-sm">Email Address</label>
+                        <input type="email"
+                            value="juan.delacruz@example.com"
+                            class="bg-[#F3E9E2] p-2 border border-[#DCC9BB] rounded-lg outline-none focus:ring-[#FFD25F] focus:ring-2 w-full text-black">
                     </div>
 
                     <div>
@@ -69,20 +71,22 @@
                         Save Changes
                     </button>
                 </div>
-            </form>
 
-            <!-- Delete Account Form -->
-            <form action="<?= site_url('user/delete') ?>" method="post" class="mt-6 text-center">
-                <button type="submit"
-                    class="text-red-600 text-sm underline"
-                    onclick="return confirm('Are you sure you want to delete your account?')">
-                    Delete Account
-                </button>
-            </form>
+                <!-- Save Button -->
+                <div class="pt-4 w-full">
+                    <?= view('components/buttons/primary_button', [
+                        'btnName' => 'Save Changes',
+                        'disable' => false,
+                        'version' => false,
+                        'link' => '#'
+                    ]) ?>
+                </div>
 
+            </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <?= view('components/footer') ?>
 
 </body>
