@@ -13,7 +13,7 @@
                         <a href="/" class="title">Café</a>
                         <a href="/" class="title">de</a>
                         <a href="/" class="title">Lumière</a>
-                        <a href="/order" class="btn">Order</a>
+                        <a href="/cart" class="btn">Order</a>
                         <?php if (session()->has('user')): ?>
                             <a href="/logout" class="btn">Logout</a>
                         <?php else: ?>
