@@ -24,7 +24,7 @@
 
                 --dark-latte: #ffe195ff;
                 --latte: #E5D6CC;
-                --light-latte: #EDE4DD;
+                --light-latte: #ffebb9ff;
             }
 
             /*espresso color */

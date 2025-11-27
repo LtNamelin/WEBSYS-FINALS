@@ -54,6 +54,22 @@
                             value="juan.delacruz@example.com"
                             class="bg-[#F3E9E2] p-2 border border-[#DCC9BB] rounded-lg outline-none focus:ring-[#FFD25F] focus:ring-2 w-full text-black">
                     </div>
+
+                    <div>
+                        <label class="block mb-1 font-medium text-color-dark-espresso text-sm">Email Address</label>
+                        <input type="email"
+                            name="email"
+                            value="<?= esc($user->email) ?>"
+                            class="p-2 border border-gray-300 rounded-lg w-full">
+                    </div>
+
+                </div>
+
+                <!-- Save Changes Button -->
+                <div class="pt-4 w-full">
+                    <button type="submit" class="bg-blue-600 px-4 py-2 rounded w-full text-white">
+                        Save Changes
+                    </button>
                 </div>
 
                 <!-- Save Button -->
