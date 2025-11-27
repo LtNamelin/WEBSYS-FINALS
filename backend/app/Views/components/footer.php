@@ -27,7 +27,7 @@
             <div class="md:text-right">
                 <h5 class="mb-4 font-bold text-3xl md:text-4xl">Contact Us</h5>
                 <ul class="space-y-2 text-lg">
-                    <li><a href="#" class="hover:text-light-latte transition">MyCoffeeIsFresh@gmail.com</a></li>
+                    <li><a href="#" class="hover:text-light-latte transition">CaféLumière@gmail.com</a></li>
                     <li><a href="#" class="hover:text-light-latte transition">Telephone: (032)-845-2291</a></li>
                     <li><a href="#" class="hover:text-light-latte transition">Mobile: 0967-381-4528</a></li>
                 </ul>
@@ -38,7 +38,7 @@
         <hr class="my-6 border-white/30">
 
         <p class="opacity-75 text-base text-center">
-            &copy; 2025 My Coffee. (Class Activity For School)
+            &copy; 2025 Café de Lumière. (Class Activity For School)
         </p>
     </div>
 </footer>
