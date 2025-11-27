@@ -26,3 +26,8 @@ $routes->post('/signupPage', 'Auth::signupPage');
 
 $routes->get('/order', 'MenuController::order');
 $routes->get('/products', 'Products::index');
+
+$routes->group('user', function ($routes) {
+    $routes->post('update', 'Users::updateDetails');
+    $routes->post('delete', 'Users::deleteAccount'); // for deleting account
+});

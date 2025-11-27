@@ -65,6 +65,8 @@ class Auth extends BaseController
             'display_name' => trim(($userArr['first_name'][0] ?? '') . ' ' . ($userArr['middle_name'][0] ?? '') . ' ' . ($userArr['last_name'] ?? '')),
         ]);
 
+
+        $session->set('user_id', $userArr['id']);
         log_message('debug', 'User Session: ' . print_r($session->get('user'), true));
 
         $type = strtolower($userArr['type'] ?? 'regular_client');
