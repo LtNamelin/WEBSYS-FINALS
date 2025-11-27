@@ -12,11 +12,11 @@ class ProductsModel extends Model
     protected $useSoftDeletes = true;
 
     protected $allowedFields = [
-        'name',
-        'description',
+        'product_name',
+        'product_description',
         'price',
-        'image',
-        'category',
+        'product_image',
+        'type',
         'is_available'
     ];
 

@@ -3,16 +3,21 @@
 namespace App\Controllers;
 
 use CodeIgniter\Controller;
+use App\Models\ProductsModel;
 
 class MenuController extends Controller
 {
-    public function index()
+    public function menu()
     {
-        return view('user/menuPage');
-    }
+        $productsModel = new ProductsModel();
+        $coffeeProducts = $productsModel->where('type', 'Coffee')->findAll();
+        $pastryProducts = $productsModel->where('type', 'Pastry')->findAll();
 
-    public function order()
-    {
-        return view('user/orderPage');
+        $data = [
+            'coffeeProducts' => $coffeeProducts,
+            'pastryProducts' => $pastryProducts
+        ];
+
+        return view('user/menuPage',  $data);
     }
 }
