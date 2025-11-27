@@ -64,114 +64,116 @@
         <section>
             <h2 class="mb-4 font-bold text-3xl">Buttons - Base</h2>
             <div class="flex flex-wrap gap-4 bg-white shadow p-6 rounded-xl">
-                <?= view('components/buttons/primary_button', [
-                    'btnName' => 'Primary',
-                    'link' => '#'
-                ]) ?>
 
-                <?= view('components/buttons/secondary_button', [
-                    'btnName' => 'Secondary',
-                    'link' => '#'
-                ]) ?>
+                <!-- Base Primary (Gold) -->
+                <a href="#"
+                    class="bg-[#FFD700] hover:bg-[#e6c200] px-6 py-2 rounded-lg font-semibold text-[#55595E] transition">
+                    Primary
+                </a>
 
-                <?= view('components/buttons/border_button', [
-                    'btnName' => 'Border',
-                    'link' => '#'
-                ]) ?>
+                <!-- Base Secondary (Gray) -->
+                <a href="#"
+                    class="bg-[#55595E] hover:bg-[#3d4044] px-6 py-2 rounded-lg font-semibold text-white transition">
+                    Secondary
+                </a>
 
-                <?= view('components/buttons/primary_button', [
-                    'btnName' => 'Disable',
-                    'link' => '#',
-                    'disable' => true
-                ]) ?>
+                <!-- Base Border (Gold border, white bg) -->
+                <a href="#"
+                    class="bg-white hover:bg-[#fff7cc] px-6 py-2 border border-[#FFD700] rounded-lg font-semibold text-[#55595E] transition">
+                    Border
+                </a>
+
             </div>
         </section>
+
 
         <section>
             <h2 class="mb-4 font-bold text-3xl">Buttons - Large</h2>
             <div class="flex flex-wrap gap-4 bg-white shadow p-6 rounded-xl">
-                <?= view('components/buttons/primary_button', [
-                    'btnName' => 'Primary',
-                    'disable' => false,
-                    'version' => true,
-                    'link' => '#'
-                ]) ?>
 
-                <?= view('components/buttons/secondary_button', [
-                    'btnName' => 'Secondary',
-                    'disable' => false,
-                    'version' => true,
-                    'link' => '#'
-                ]) ?>
+                <!-- Large Primary (Deep Red premium look) -->
+                <a href="#"
+                    class="bg-[#B81507] hover:bg-[#8e1006] px-8 py-4 rounded-xl font-bold text-white text-lg transition">
+                    Primary
+                </a>
 
-                <?= view('components/buttons/border_button', [
-                    'btnName' => 'Border',
-                    'disable' => false,
-                    'version' => true,
-                    'link' => '#'
-                ]) ?>
+                <!-- Large Secondary (Premium Gray) -->
+                <a href="#"
+                    class="bg-[#55595E] hover:bg-[#3d4044] px-8 py-4 rounded-xl font-bold text-white text-lg transition">
+                    Secondary
+                </a>
 
-                <?= view('components/buttons/primary_button', [
-                    'btnName' => 'Disable',
-                    'link' => '#',
-                    'version' => true,
-                    'disable' => true
-                ]) ?>
+                <!-- Large Border (Green for accent) -->
+                <a href="#"
+                    class="hover:bg-[#e6ffe6] px-8 py-4 border-[#00C34B] border-2 rounded-xl font-bold text-[#00C34B] text-lg transition">
+                    Border
+                </a>
+
             </div>
         </section>
 
 
+
+
         <!-- Cards -->
         <section class="space-y-12">
-            <h2 class="mb-4 font-bold text-3xl">Card Sample</h2>
+            <h2 class="mb-4 font-europe-heading font-bold text-3xl">Card Sample</h2>
+
             <div class="gap-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+
+                <!-- Card 1 -->
                 <div>
                     <?= view('components/cards/card', [
-                        'title' => 'Sample',
-                        'description' => 'Description',
+                        'title' => 'Espresso Classico',
+                        'description' => 'Rich, bold European espresso with deep crema.',
                         'price' => null,
-                        'link' => "Link",
+                        'link' => "Order",
                         'status' => null,
                         'color' => null,
-                        'image' => 'https://www.thespruceeats.com/thmb/HJrjMfXdLGHbgMhnM0fMkDx9XPQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/what-is-espresso-765702-hero-03_cropped-ffbc0c7cf45a46ff846843040c8f370c.jpg'
+                        'image' => 'https://upload.wikimedia.org/wikipedia/commons/4/45/A_small_cup_of_coffee.JPG'
                     ]) ?>
                 </div>
 
+                <!-- Card 2 -->
                 <div>
                     <?= view('components/cards/card', [
-                        'title' => 'Sample',
-                        'description' => 'Description',
-                        'price' => 'Price',
+                        'title' => 'Cortado',
+                        'description' => 'Spanish-style espresso cut with warm milk for a silky, mellow taste.',
+                        'price' => '₱190',
                         'link' => null,
                         'status' => null,
                         'color' => null,
-                        'image' => 'https://www.thespruceeats.com/thmb/HJrjMfXdLGHbgMhnM0fMkDx9XPQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/what-is-espresso-765702-hero-03_cropped-ffbc0c7cf45a46ff846843040c8f370c.jpg'
+                        'image' => 'https://cdn.shopify.com/s/files/1/0801/7530/0936/files/WK_Social_10062022_4_2048x2048.png?v=1711995048'
                     ]) ?>
                 </div>
 
+                <!-- Card 3 -->
                 <div>
                     <?= view('components/cards/card', [
-                        'title' => 'Sample',
-                        'description' => 'Description',
-                        'price' => 'Price',
-                        'link' => "Link",
-                        'status' => 'Status',
+                        'title' => 'Caffè Romano',
+                        'description' => 'Italian espresso served with zest of lemon.',
+                        'price' => '₱160',
+                        'link' => "Details",
+                        'status' => 'Popular',
                         'color' => 'bg-gray-700',
-                        'image' => 'https://www.thespruceeats.com/thmb/HJrjMfXdLGHbgMhnM0fMkDx9XPQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/what-is-espresso-765702-hero-03_cropped-ffbc0c7cf45a46ff846843040c8f370c.jpg'
+                        'image' => 'https://cornercoffeestore.com/wp-content/uploads/2022/10/espresso-romano-coffee-serve-with-lemon_Darunee-komkuntood_Shutterstock.jpg'
                     ]) ?>
                 </div>
+
             </div>
+
 
             <h2 class="mb-4 font-bold text-3xl">Highlight Card Sample</h2>
             <div>
                 <?= view('components/cards/highlight_Card', [
-                    'title' => 'Mocha',
-                    'description' => 'Perfect balance of deep espresso, steamed milk, and rich chocolate',
-                    'price' => '₱200',
-                    'status' => 'Most Bought This Month',
+                    'title' => 'Royal Cappuccino',
+                    'description' => 'Silky European foam crowned with cocoa — a royal treat.',
+                    'price' => '₱220',
+                    'status' => 'Featured Drink',
                     'color' => 'color-espresso',
-                    'image' => 'https://www.folgerscoffee.com/folgers/recipes/_Hero%20Images/Detail%20Pages/5598/image-thumb__5598__schema_image/MochaIced-hero.58f3878d.jpg'
+                    'image' => 'https://guentercoffee.com/cdn/shop/articles/anleitung-cappuccino-blogheader.jpg?v=1758119315&width=1440'
                 ]) ?>
+
             </div>
 
 
@@ -192,21 +194,25 @@
 
         <!-- Logo -->
         <section>
-            <h2 class="mb-4 font-bold text-3xl">Logo</h2>
+            <h2 class="mb-4 font-europe-heading font-bold text-3xl">Logo</h2>
+
             <div class="gap-2 grid grid-cols-2">
-                <div class="bg-white shadow p-6 rounded-xl">
-                    <img src="/assets/image/Logo.svg" alt="MY Coffee Logo" class="mx-auto rounded-full w-50 h-50 object-cover">
+
+                <div class="bg-white shadow-xl p-6 border border-[#FFD700]/40 rounded-xl">
+                    <img src="/assets/image/Logo.svg"
+                        class="drop-shadow-xl mx-auto rounded-full w-40 h-40 object-cover">
                 </div>
 
-                <div class="bg-white shadow p-6 rounded-xl">
-                    <img src="/assets/image/Logo.svg" alt="MY Coffee Logo" class="mx-auto rounded-lg w-50 h-50 object-contain">
+                <div class="bg-white shadow-xl p-6 border border-[#FFD700]/40 rounded-xl">
+                    <img src="/assets/image/Logo.svg"
+                        class="mx-auto rounded-lg w-40 h-40 object-contain">
                 </div>
+
             </div>
         </section>
-    </div>
 
-    <!-- Footer -->
-    <?= view('components/footer') ?>
+        <!-- Footer -->
+        <?= view('components/footer') ?>
 
 </body>
 
