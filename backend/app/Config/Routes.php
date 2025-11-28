@@ -10,10 +10,15 @@ $routes->get('/moodBoard', 'Users::moodBoard');
 $routes->get('/roadMap', 'Users::roadMap');
 $routes->get('/admin/dashboard', 'Admin::dashboard');
 $routes->get('/admin/accountsPage', 'Admin::accountsPage');
-$routes->get('/admin/menuPage', 'Admin::menuPage');
 $routes->get('/userProfile', 'Users::userProfile');
-$routes->get('/admin/orderPage', 'Admin::orderPage');
 
+$routes->get('/admin/orderPage', 'Admin::orderPage');
+$routes->post('/admin/orderPage', 'Admin::orderPage');
+
+$routes->get('/admin/menuPage', 'Admin::showMenuPage');
+$routes->post('/admin/menuPage', 'Admin::menuPage');
+
+$routes->get('/menuPage', 'MenuController::menu');
 $routes->get('/loginPage', 'Auth::showLoginPage');
 $routes->post('/loginPage', 'Auth::loginPage');
 
@@ -22,3 +27,14 @@ $routes->get('/logout', 'Auth::logout');
 $routes->get('/signupPage', 'Auth::showSignupPage');
 $routes->post('/signupPage', 'Auth::signupPage');
 
+$routes->get('/cart', 'Cart::index');
+$routes->post('/cart/add', 'Cart::add');
+$routes->post('/cart/increase/(:num)', 'Cart::increase/$1');
+$routes->post('/cart/decrease/(:num)', 'Cart::decrease/$1');
+$routes->post('/cart/remove/(:num)', 'Cart::remove/$1');
+$routes->post('/cart/checkout', 'Cart::checkout');
+
+$routes->group('user', function ($routes) {
+    $routes->post('update', 'Users::updateDetails');
+    $routes->post('delete', 'Users::deleteAccount'); // for deleting account
+});

@@ -4,16 +4,25 @@
 <br/>
 
 <div align="center">
-  <a href="https://github.com/IhaveNoIdead/">
-    <img src="/assets/image/DennisWithAGun.png" alt="DennisWithAGun" width="130" height="100">
+  <a href="https://github.com/LtNamelin/">
+    <img src="/assets/image/Logo.png" alt="Logo" width="130" height="100">
   </a>
 <!-- * Title Section -->
-  <h3 align="center">AD - CI4 Demo — My Coffee</h3>
+  <h3 align="center">AD - CI4 Demo — Group Arceus Finals</h3>
 </div>
 
 <!-- * Description Section -->
 <div align="center">
-This repository contains the scource for a class assignemnt 
+This repository contains the finals project for group Arceus, a coffee shop with a divine European aesthetic following the color palette of the Pokemon "Arceus"
+</div>
+<br/>
+<div align="center">
+Group members and roles:<br/>
+Espiritu, Samuel Terrence T. [Project Manager]<br/>
+Arabe, Vince Carlos P.       [Frontend Developer]<br/>
+Capapas, Naomie Feona G.     [Backend Developer]<br/>
+Lagumen, Dennis              [Backend Developer]<br/>
+Pomarejos, Michaelo Ramwhel  [Frontend Developer]
 </div>
 
 <br/>
@@ -53,7 +62,7 @@ This repository contains the scource for a class assignemnt
 ---
 
 ## Overview
-This class assignment is an **Online Coffee Shop Web Application** built with CodeIgniter 4
+Our website **Cafe de Lumiere** is an online coffee business built with CodeIgniter 4, that allows users to order products from online, and website admins to keep track of customer orders.
 ### Key Components
 
 Key componets that has been implemented or to be implemented in the future **(probably)**
@@ -62,9 +71,10 @@ Key componets that has been implemented or to be implemented in the future **(pr
 | ------------------------- | ------------------------------------------------------------------- |
 | **Product Module**        | Display coffee products with details and prices                     |
 | **Cart Module**           | Allow users to add/remove products and review selected product/s    |
-| **Order Module**          | Handles checkout and order history                                  |
+| **Order Module**          | Handles customer checkout                                           |
 | **Admin Dashboard**       | Lets admins add/edit products and manage orders                     |
 | **Auth System**           | Login/register for customers and admins                             |
+| **User Profile**          | View, edit, and delete user profile                                 |
 
  <!-- ! Start simple. Use these modules as **learning samples**; extend or replace them based on your project’s needs. -->
 
